@@ -38,10 +38,9 @@ function Header() {
                             <div className={styles.language_block}>
                                 <p>Language :</p>
                                 <select name="" id="">
-                                    <option value=""></option>
-                                    <option value=""></option>
-                                    <option value=""></option>
-                                    <option value=""></option>
+                                    <option value="">русский</option>
+                                    <option value="">кыргызча</option>
+                                    
                                 </select>
                             </div>
                         </div>
