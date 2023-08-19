@@ -1,11 +1,16 @@
-.App {
-  text-align: center;
+*{
+  box-sizing: border-box;
+  outline: none !important;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+.container{
+  background-color: aqua;
+ 
+  width:93%;
+  margin: 0 auto
 }
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
