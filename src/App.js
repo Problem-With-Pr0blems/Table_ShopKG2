@@ -1,10 +1,13 @@
-import Catalog from './Trening_catalog/Catalog';
+
 import './App.css';
+import Header from './components/Header/Header';
+import NavAssistant from './components/NavAssistant/NavAssistant';
 
 function App() {
   return (
     <div className="App">
-      <Catalog/>
+      <Header/>
+      <NavAssistant title="ЦЕНЫ НА ШКОЛЬНУЮ СКАМЬЮ"/>
     </div>
   );
 }
