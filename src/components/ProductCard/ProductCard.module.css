@@ -1,0 +1,89 @@
+.bought{
+    width: 966px;
+    height: 178px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.64);
+    box-shadow: 0px 0px 10px 0px rgba(160, 160, 160, 0.25);
+    padding: 37px 38px 19px;
+    display: flex ;
+    align-items: center;
+    
+    
+}
+
+.photoBuy{
+    width: 110px;
+    height: 122px;
+    background-color: black;
+    margin-right: 60px;
+}
+.boughtTextOne{
+    width: 222px;
+    height: 30px;
+    color: #000;
+    
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.boughtTextTwo{
+    margin-top: 31px;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #000;
+    
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.boughtTextThree{
+    padding-top: 10px;
+    color: #BCBCBC;
+    
+
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.counter{
+    display: flex;
+    padding-left: 135px;
+    gap: 28px;
+    align-items: center;
+}
+.minus{
+    width: 33px;
+    height: 33px;
+    border-radius: 5px;
+    background: #F0F0F0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+}
+.plus{
+    width: 33px;
+    height: 33px;
+    border-radius: 5px;
+    background: #F0F0F0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+}
+
+.boughtMoney{
+    margin-left: 185px;
+    color: #000;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
