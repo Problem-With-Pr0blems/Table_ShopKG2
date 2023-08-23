@@ -1,0 +1,14 @@
+.button{
+    padding: 14px 46px;
+    display: inline-block;
+    border-radius: 50px;
+    background: #FF2E00;
+    color: #FFF;
+    text-align: center;
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    border: none;
+}

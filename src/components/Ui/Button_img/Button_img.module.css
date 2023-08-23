@@ -1,0 +1,9 @@
+.button_img{
+    border-radius: 38px;
+    background: #FFF;
+    box-shadow: 0px 0px 4px 0px rgba(140, 140, 140, 0.25);
+    width: 39px;
+    height: 39px;
+    flex-shrink: 0; 
+    border: none;
+}

@@ -1,17 +1,9 @@
 {
-<<<<<<< HEAD
-  "name": "project",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.16.5",
-=======
   "name": "aitosha",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
->>>>>>> e129c57e100cd1995d82d9b95170ea8ba56735b7
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "react": "^18.2.0",

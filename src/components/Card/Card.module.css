@@ -1,0 +1,89 @@
+
+.shop_grid {
+    
+    display: inline-block;
+    border: 1px solid #D6D6D6;
+    
+}
+
+.card_title{
+    padding: 20px 0;
+    border-bottom: 1px solid #D6D6D6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000;
+}
+
+.theLot{
+    flex-wrap: wrap;
+    display: flex;
+}
+
+.theCard{
+    width: 290px;
+}
+
+.title_tables {
+    
+    
+    
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.tabls_photo {
+    width: 223px;
+    height: 179px;
+    background-color: black;
+    margin-top: 47px;
+    margin-left: 33px;
+}
+
+.table_text {
+    color: #000;
+    font-family: Capriola;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding-top: 60px;
+    padding-left: 23px;
+}
+
+.table_title_text {
+    padding-top: 31px;
+    padding-left: 23px;
+    color: #BCBCBC;
+    font-family: Cambay;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.basket_money {
+    display: flex;
+    padding-top: 51px;
+    padding-left: 33px;
+    gap: 133px;
+    align-items: center;
+}
+
+.money {
+    color: #000;
+    font-family: Roboto;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.basket {
+    width: 49px;
+    height: 49px;
+    border-radius: 50%;
+    border: none;
+}
