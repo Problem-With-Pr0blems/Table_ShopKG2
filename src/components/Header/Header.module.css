@@ -1,6 +1,8 @@
 .header_main {
     position: sticky;
     top: 0;
+    box-shadow: 0px 4px 15px 0px rgba(204, 204, 204, 0.25);
+    background: #FFF;
 }
 
 .header{
@@ -55,8 +57,13 @@
 
 
 .logo{
-    display: inline-block;
+    display: flex;
+    gap: 38px;
     height: 20px;
+    
+    @media(max-width: 400px) {
+        gap: 10px;
+    }
 }
 
 .number{
@@ -157,9 +164,27 @@
     }
 }
 
+.profile {
+    height: 20px;
+    cursor: pointer;
+}
+
 .number_show_mobile {
     display: none;
     @media(max-width: 440px) {
+        display: block;
+    }
+}
+
+.not_show_auth {
+  & button, .line, .language_block, .basket {
+    visibility: hidden;
+   }
+}
+
+.show_profile {
+    display: none;
+    @media(max-width: 1024px){
         display: block;
     }
 }

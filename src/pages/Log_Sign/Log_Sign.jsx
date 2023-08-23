@@ -8,6 +8,7 @@ function Log_Sign() {
   const [button1 , setButton1] = useState('#000')
   const [button2 , setButton2] = useState('#BDBDBD')
   const [chooosen , setChoosen] = useState(true)
+  
   const toggleColor=(numberofswitch)=>{
     if(numberofswitch===1){
         setButton1(button1 === "#000" ? "#BDBDBD" : "#000")
@@ -19,13 +20,10 @@ function Log_Sign() {
         setButton2(button2 === "#000" ? "#BDBDBD" : "#000")
         setChoosen(chooosen === true ? false :true)
     }
-
   }
-  
 
   return (
     <div className={styles.wrapper}>
-      
       <div className={styles.log_sign_block}>
         <div className={styles.switch_place}> 
           <span className={styles.switch}

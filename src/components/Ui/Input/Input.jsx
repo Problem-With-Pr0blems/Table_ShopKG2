@@ -2,11 +2,11 @@ import React from 'react'
 import styles from '../Input/Input.module.css'
 
 
-function Input({type,variant , ...props}) {
+function Input({type,variant , register, ...props}) {
    
   return (
     <label>
-        <input type={type} className={styles.input} {...props}/>
+        <input {...register} type={type} className={styles.input} {...props}/>
     </label>
   )
 }

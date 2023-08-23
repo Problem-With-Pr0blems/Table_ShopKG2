@@ -1,9 +1,9 @@
 import React from 'react'
 import styles from './Radio.module.css'
-function Radio({text ,...props}) {
+function Radio({text, register, ...props}) {
   return (
     <label>
-        <input className={styles.radio} type="radio" {...props} />
+        <input {...register} className={styles.radio} type="radio" {...props} />
         <span className={styles.text}>{text}</span>
     </label>
   )

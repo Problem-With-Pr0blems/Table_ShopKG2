@@ -7,9 +7,10 @@ import humanSVG from '../../assets/header_image/human.svg'
 import ButtonReq from '../Ui/ButtonReq/ButtonReq'
 import BurgerMenuSvg from '../../assets/header_image/BurgerMenu.svg'
 import  Drawer  from '@mui/material/Drawer'
+import { useLocation } from 'react-router-dom'
 
 
-export const Line = () => <div className={styles.line}></div>
+export const Line = () => (<div className={styles.line}></div>)
 
 export const Search = () => {
     return (
@@ -48,17 +49,24 @@ export const  HeaderLeft = () => {
         <img src={basketIMG} alt="" />
     </div>
     <Line/>
-    <div className={styles.basket}>
-        <img src={humanSVG} alt="" />
-    </div>
+    <Profile/>
    </>
    )
 }
 
-export const HeaderBurger = () => {
+const Profile = () => {
+    return (
+        <div className={styles.profile}>
+        <img src={humanSVG} alt="" />
+        </div>
+    )
+}
+
+export const HeaderBurger = ({isAuth}) => {
     const [ open, setOpen ] = useState(false)
     const handleClose = () => setOpen(false)
     const handleOpen = () => setOpen(true)
+    if(!isAuth) return <div className={styles.show_profile}><Profile/></div>
     return (
         <>
         <button onClick={handleOpen} className={styles.burger}>
@@ -69,7 +77,7 @@ export const HeaderBurger = () => {
             onClose={handleClose}
             anchor='right'
         >
-            <div className={styles.header_left}>
+            <div className={`${styles.header_left} ${!isAuth ? styles.not_show_auth : ''}`}>
                 <HeaderLeft/>
             </div>
         </Drawer>
@@ -90,23 +98,28 @@ export const PhoneLink = () => {
 
 
 function Header() {
+    const location = useLocation()
+    const isAuth = location.pathname !== '/auth'
   return (
     <header className={styles.header_main}>
         <div className={styles.header}>
         <div className={styles.header_inner}>
                 <div className={styles.logo}>
                     <img src={logo} alt="" />
+                    <Line/>
                 </div>
-                <Line/>
-                <div className={styles.number_show_desc}>
+                <div className={`${isAuth  ? styles.number_show_desc : styles.logo}`}>
                  <PhoneLink/>
                  <Line/>
                 </div>
-                <Search/>
-                <div className={styles.header_left_show}>
-                    <HeaderLeft/>
+                {
+                    isAuth && <Search/>
+                }
+                <div className={`${styles.header_left_show} ${!isAuth ? styles.not_show_auth : ''}`}>
+                    <HeaderLeft />
                 </div>
-                <HeaderBurger/>
+                <HeaderBurger isAuth={isAuth}/>
+                
             </div>
         </div>
     </header>
