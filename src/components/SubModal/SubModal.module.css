@@ -1,0 +1,48 @@
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  max-width: 500px;
+  width: 100%;
+  background: #FFF;
+  padding: 36px 40px ;
+  border-radius: 5px;
+}
+
+.modal h3 {
+  color: #000;
+  font-family: Roboto;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.modal h4 {
+  margin-top: 3px;
+  color: #FF2E00;
+  font-family: Roboto;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.form {
+  margin-top: 38px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+.form label:nth-child(4) {
+  margin-top: 10px;
+  padding-left: 10px;
+}
+
+.form button {
+  margin: 33px 0 0 0;
+  align-self: flex-end;
+}

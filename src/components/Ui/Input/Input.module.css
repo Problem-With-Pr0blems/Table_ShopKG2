@@ -6,7 +6,6 @@
     box-shadow: 0px 0px 4px 0px rgba(140, 140, 140, 0.25);
     border: none;
     padding: 0 0 0 23px ;
-    
 }
 
 .input::placeholder{
@@ -16,4 +15,11 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+}
+
+.request {
+    border-radius: 38px;
+    border: 1px solid #DFDFDF;
+    background: #FFF;
+    box-shadow: none;
 }
