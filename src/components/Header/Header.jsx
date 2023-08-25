@@ -57,7 +57,7 @@ const selectStyle = {
 }
 
 export const SelectLang = () => {
-    const [value, setValue] = useState('кы')
+    const [value, setValue] = useState('Ru')
     const handleChange = (event) => {
         setValue(event.target.value);
       };
@@ -74,11 +74,7 @@ export const SelectLang = () => {
           <MenuItem value={'Ru'}>русский</MenuItem>
           <MenuItem value={'Ky'}>кыргызча</MenuItem>
         </Select>
-            <p style={{position:'absolute',}}>{value}</p>
-            {/* <select value={value} onChange={(e)=>setValue(e.target.value)}>
-                <option value="ру" >русский</option>
-                <option value="кы">кыргызча</option>
-            </select>    */}
+        <p style={{position:'absolute',}}>{value}</p>
         </div>
     )
 }
@@ -152,21 +148,21 @@ const Profile = () => {
             <img src={humanSVG} alt="" />
         </div>
         <DropDown open={open} anchorEl={anchorEl} handleClose={handleClose} >
-            <MenuItem disableRipple disableGutters onClick={()=>handleNavigate({path: '/auth',param: 'login'})}>
+            {/* <MenuItem disableRipple disableGutters onClick={()=>handleNavigate({path: '/auth',param: 'login'})}>
                 <ButtonReq width='164px'>Войти</ButtonReq>
             </MenuItem>
             <MenuItem sx={{justifyContent: 'center',marginTop: '8px'}} disableRipple disableGutters onClick={()=>handleNavigate({path: '/auth',param: 'sign'})}>
                 <span className={styles.dropdown_item_sign}>Зарегистрироваться</span>
-            </MenuItem>
-            {/* <MenuItem disableRipple disableGutters onClick={handleClose}>
+            </MenuItem> */}
+            <MenuItem disableRipple disableGutters onClick={()=>handleNavigate({path:'/profile',param:'1'})}>
                 <span className={styles.dropdown_item}>Профиль</span>
             </MenuItem>
-            <MenuItem sx={{margin: '15px  0 30px'}} disableRipple disableGutters onClick={handleClose}>
+            <MenuItem sx={{margin: '15px  0 30px'}} disableRipple disableGutters onClick={()=>handleNavigate({path:'/profile',param:'2'})}>
                 <span className={styles.dropdown_item}>История заказов</span>
             </MenuItem>
             <MenuItem disableRipple disableGutters onClick={handleClose}>
                 <ButtonReq width='164px'>Выйти</ButtonReq>
-            </MenuItem> */}
+            </MenuItem>
         </DropDown>
         </>
     )

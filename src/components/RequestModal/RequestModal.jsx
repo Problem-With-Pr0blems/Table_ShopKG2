@@ -1,21 +1,24 @@
+import React, { useState } from 'react'
+import styles from './RequstModal.module.css'
 import { Box, IconButton, Modal } from '@mui/material'
-import React from 'react'
-import closeIcon from '../../assets/icon/close.svg'
-import styles from './SubModal.module.css'
 import Input from '../Ui/Input/Input'
-import Radio from '../Ui/Radio/Radio'
 import ButtonReq from '../Ui/ButtonReq/ButtonReq'
-
+import closeIcon from '../../assets/icon/close.svg'
+import ModalAlert from '../ModalAlert/ModalAlert'
 
 
 const iconStyle = {
   position: 'absolute',
   top: '16px',
-  right: '16px'
+  right: '18px'
 }
 
-const SubModal = ({open,onClose}) => {
+const RequestModal = ({open,onClose}) => {
+  const [alertOpen, setAlertOpen] = useState(false);
+  const handleOpen = () => setAlertOpen(true);
+  const handleClose = () => setAlertOpen(false);
   return (
+   <>
     <Modal
         open={open}
         onClose={onClose}
@@ -26,18 +29,17 @@ const SubModal = ({open,onClose}) => {
           <IconButton sx={iconStyle} onClick={onClose}>
             <img src={closeIcon} alt="" />
           </IconButton>
-          <h3>Оставьте заявку</h3>
-          <h4>Мы свяжемся с вами в течении часа</h4>
-          <form  className={styles.form}>
+          <h3>Ваши данные</h3>
+          <form  className={styles.form} onSubmit={(e)=>e.preventDefault()}>
             <Input placeholder='Имя' variantRequest/>
             <Input placeholder='Номер телефона' variantRequest/>
-            <Input placeholder='Вопрос' variantRequest/>
-            <Radio text='Я даю согласие на обработку моих персональных данных'/>
-            <ButtonReq width='164px'>Отправить</ButtonReq>
+            <ButtonReq onClick={handleOpen} width='164px'>Заказать</ButtonReq>
           </form>
         </Box>
       </Modal>
+      <ModalAlert open={alertOpen} onClose={handleClose}/>
+   </>
   )
 }
 
-export default SubModal
+export default RequestModal
