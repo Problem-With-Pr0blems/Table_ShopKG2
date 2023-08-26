@@ -1,31 +1,41 @@
 
 import './App.css';
 import { Routes,Route } from 'react-router-dom'
-import Layout from './components/Layout/Layout';
 import Loader from './components/Ui/Loader/Loader';
-import Log_Sign from './pages/Log_Sign/Log_Sign';
-import Profile from './pages/Profile/Profile';
-import RequestModal from './components/RequestModal/RequestModal';
-import { useState } from 'react';
+import { lazy, useState } from 'react';
+import { Translate } from './components/Translate/Translate';
+const LogSign = lazy(()=>import('./pages/Log_Sign/Log_Sign'))
+const Profile = lazy(()=>import('./pages/Profile/Profile'))
+const Layout = lazy(()=>import('./components/Layout/Layout'))
+const RequestModal = lazy(()=>import('./components/RequestModal/RequestModal'))
+const DetailProduct = lazy(()=> import('./components/DetailProduct/DetailProduct'))
 
 
 function App() {
   const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(true);
+  const handleOpen = async() => {
+    setOpen(true)
+  };
   const handleClose = () => setOpen(false);
   return (
     <div className="App">
       <Routes>
         <Route loader={<Loader/>}  element={<Layout/>} >
             <Route index  path='/' element={<h1>Hello</h1>}/>
-            <Route path='/auth' element={<Log_Sign/>}/>
+            <Route path='/auth' element={<LogSign/>}/>
             <Route path='/profile' element={<Profile/>}/>
+          <Route path='*' element={<h1>Not found page 404</h1>}/>
         </Route>
-        <Route path='*' element={<h1>Not found page 404</h1>}/>
       </Routes> 
       <button onClick={handleOpen}>
+        <Translate>
         open modal request
+        </Translate>
       </button>
+      <Translate >
+        Hello
+      </Translate>
+      {/* <DetailProduct open={true}/> */}
       <RequestModal open={open} onClose={handleClose}/>
     </div>
   );

@@ -8,7 +8,21 @@ import facebook from '../../assets/logAndSign/facebook.svg'
 import google from '../../assets/logAndSign/google.svg'
 import styles from './Signin.module.css'
 import { useForm } from 'react-hook-form'
+import { Translate } from '../Translate/Translate'
 
+const typesError = {
+    required: true,
+    pattern: true,
+    minLength: true,
+}
+
+export const Error = ({type,children})=>{
+    return typesError[type] && <p className={styles.error}>
+        <Translate>
+            {children}
+        </Translate>
+    </p>
+}
 
 function Signin() {
     const { register, handleSubmit, watch, formState: { errors } } = useForm()
@@ -28,16 +42,27 @@ function Signin() {
             <p className={styles.or}>or using e-mail for log in</p>
             <div className={styles.signin_inputs}>
                 <Input  register={{...register("name", {required: true, minLength: 1, pattern: /\w+/,  })}} type='text' variant='simple' placeholder='Имя *'/>
-                {errors.name?.type === 'required' && <p className={styles.error}>Field is required</p>}
-                {errors.name?.type === 'pattern' && <p className={styles.error}>Only in english</p>}
+                <Error type={errors.name?.type}>
+                    Field is required
+                </Error>
+                <Error type={errors.name?.type}>
+                    Only in english
+                </Error>
 
                 <Input  register={{...register("email", {required: true,pattern:/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g })}} type='text' variant='simple' placeholder='E-mail *'/>
-                {errors.email?.type === 'required' && <p className={styles.error}>Field is required</p>}
-                {errors.email?.type === 'pattern' && <p className={styles.error}>Not valid email</p>}
+                <Error type={errors.email?.type}>
+                    Field is required
+                </Error>
+                <Error type={errors.email?.type}>
+                    Not valid email
+                </Error>
                 <Input  register={{...register("password", {required: true, minLength: 8})}} type='password' variant ="password" placeholder='Пароль *'/>
-                {errors.password?.type === 'required' && <p className={styles.error}>Field is required</p>}
-                {errors.password?.type === 'minLength' && <p className={styles.error}>Min length of password 8 character</p>}
-                
+                <Error type={errors.password?.type}>
+                    Field is required
+                </Error>
+                <Error type={errors.password?.type}>
+                    Min length of password 8 character
+                </Error>
             </div>
             <p className={styles.warning}>Поля, помеченные звездочками, обязательны для заполнения.</p>
             <div className={styles.radio}>

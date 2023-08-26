@@ -15,7 +15,10 @@ const iconStyle = {
 
 const RequestModal = ({open,onClose}) => {
   const [alertOpen, setAlertOpen] = useState(false);
-  const handleOpen = () => setAlertOpen(true);
+  const handleOpen = () => {
+    setAlertOpen(true)
+    onClose()
+  };
   const handleClose = () => setAlertOpen(false);
   return (
    <>

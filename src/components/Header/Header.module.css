@@ -5,7 +5,7 @@
     background: #FFF;
 }
 
-.header{
+.header {
     padding: 21px 0;
     width: 100%;
 }
@@ -18,6 +18,7 @@
     width: 100%;
     padding: 0 70px;
     gap: 10px;
+
     @media(max-width: 1024px) {
         padding: 0 20px;
     }
@@ -32,6 +33,7 @@
     justify-content: space-between;
     align-items: center;
     width: 40%;
+
     @media(max-width: 1024px) {
         display: none;
     }
@@ -41,7 +43,7 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    gap:30px;
+    gap: 30px;
     flex-wrap: wrap;
     column-gap: 10px;
 
@@ -56,17 +58,17 @@
 }
 
 
-.logo{
+.logo {
     display: flex;
     gap: 38px;
     height: 20px;
-    
+
     @media(max-width: 400px) {
         gap: 10px;
     }
 }
 
-.number{
+.number {
     height: 20px;
     display: flex;
     align-items: center;
@@ -80,12 +82,12 @@
 
 
 
-.basket{
+.basket {
     height: 20px;
     cursor: pointer;
 }
 
-.social{
+.social {
     height: 20px;
     cursor: pointer;
 }
@@ -105,7 +107,7 @@
     padding: 0 15px 0 18px;
 }
 
-.search_block input{
+.search_block input {
     border: none;
     height: 30px;
     width: 100%;
@@ -115,16 +117,16 @@
     cursor: pointer;
 }
 
-.search_block input::placeholder{
+.search_block input::placeholder {
     color: #E4E4E4;
 }
 
 
-.search img{
+.search img {
     margin-right: 10px;
 }
 
-.language_block {
+.uage_block {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
@@ -145,6 +147,7 @@
     display: none;
     border: none;
     background: none;
+
     @media(max-width: 1024px) {
         display: flex;
         align-items: center;
@@ -156,10 +159,12 @@
     align-items: center;
     justify-content: space-between;
     width: 13%;
+
     @media(max-width: 1024px) {
         width: 20%;
     }
-    @media(max-width: 440px){
+
+    @media(max-width: 440px) {
         display: none;
     }
 }
@@ -171,20 +176,26 @@
 
 .number_show_mobile {
     display: none;
+
     @media(max-width: 440px) {
         display: block;
     }
 }
 
 .not_show_auth {
-  & button, .line, .language_block, .basket {
-    visibility: hidden;
-   }
+
+    & button,
+    .line,
+    .language_block,
+    .basket {
+        visibility: hidden;
+    }
 }
 
 .show_profile {
     display: none;
-    @media(max-width: 1024px){
+
+    @media(max-width: 1024px) {
         display: block;
     }
 }

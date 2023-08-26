@@ -1,5 +1,6 @@
 import { Box, Drawer } from '@mui/material'
-import React, { useState } from 'react'
+import { useState } from 'react'
+import ImageSlide from '../ImageSlide/ImageSlide'
 
 const DetailProduct = ({open,onClose}) => {
   return (
@@ -7,11 +8,12 @@ const DetailProduct = ({open,onClose}) => {
     open={open}
     onClose={onClose}
     anchor='bottom'
->
+  >
     <Box sx={{
-      height: '650px'
+      height: '650px',
+      p: '42px 60px 26px'
     }}>
-      hi
+     <ImageSlide/>
     </Box>
 </Drawer>
   )

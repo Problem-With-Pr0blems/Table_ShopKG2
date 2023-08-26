@@ -1,4 +1,4 @@
-.button{
+.button {
     padding: 14px 46px;
     display: inline-block;
     border-radius: 50px;
@@ -11,4 +11,5 @@
     font-weight: 500;
     line-height: normal;
     border: none;
+    cursor: pointer;
 }

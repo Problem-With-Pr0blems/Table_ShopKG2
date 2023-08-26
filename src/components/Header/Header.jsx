@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import styles from "./Header.module.css"
 import logo from "../../assets/header_image/Group 68.svg"
 import searchIMG from '../../assets/header_image/Vector.svg'
@@ -12,13 +12,16 @@ import { Badge, MenuItem, Select } from '@mui/material'
 import DropDown from '../Ui/DropDown/DropDown'
 import SubModal from '../SubModal/SubModal'
 import ArrowIcon from '../../assets/icon/arrow.svg'
+import { LangContext } from '../../Providers/Providers'
+import { Translate, useTranslate } from '../Translate/Translate'
 
 export const Line = () => (<div className={styles.line}></div>)
 
 export const Search = () => {
+    const placeholder = useTranslate('search')
     return (
         <div className={styles.search_block}>
-            <input type="text" placeholder='search'/>
+            <input type="text" placeholder={placeholder}/>
             <img src={searchIMG} alt="" />
         </div>
     )
@@ -28,7 +31,7 @@ const selectStyle = {
     sx:{
         width: '50px',
         '.MuiSelect-select': {
-             color: 'white',
+             color: 'transparent',
              overflow: 'hidden',
              width: '100px',
              padding: 0
@@ -57,24 +60,29 @@ const selectStyle = {
 }
 
 export const SelectLang = () => {
-    const [value, setValue] = useState('Ru')
-    const handleChange = (event) => {
-        setValue(event.target.value);
+    const {lang,setLang} = useContext(LangContext)
+
+    const handleChange = ({target}) => {
+        setLang(prevState=>{
+            localStorage.setItem('lang',JSON.stringify({ active: target.value, prev: prevState.active }))
+            return { active: target.value, prev: prevState.active }
+        });
+
       };
-    
     return (
         <div style={{position: 'relative'}} className={styles.language_block}>
              <Select
                 variant='standard'
-                value={value}
+                value={lang.active}
                 onChange={handleChange} 
                 IconComponent={()=><img src={ArrowIcon}/>}
                 {...selectStyle}
             >
-          <MenuItem value={'Ru'}>русский</MenuItem>
-          <MenuItem value={'Ky'}>кыргызча</MenuItem>
+          <MenuItem value={'Ru'}>Русский</MenuItem>
+          <MenuItem value={'Ky'}>Кыргызча</MenuItem>
+          <MenuItem value={'En'}>English</MenuItem>
         </Select>
-        <p style={{position:'absolute',}}>{value}</p>
+        <p style={{position:'absolute',top: -2, zIndex: -1}}>{lang.active}</p>
         </div>
     )
 }
@@ -86,7 +94,9 @@ export const ButtonRequest = () =>{
 
     return (
         <>
-        <ButtonReq onClick={handleOpen}>Оставить заявку</ButtonReq>
+        <ButtonReq onClick={handleOpen}>
+                Оставить заявку 
+        </ButtonReq>
         <SubModal open={open} onClose={handleClose}/>
         </>
     )
@@ -155,13 +165,23 @@ const Profile = () => {
                 <span className={styles.dropdown_item_sign}>Зарегистрироваться</span>
             </MenuItem> */}
             <MenuItem disableRipple disableGutters onClick={()=>handleNavigate({path:'/profile',param:'1'})}>
-                <span className={styles.dropdown_item}>Профиль</span>
+                <span className={styles.dropdown_item}>
+                    <Translate>
+                        Профиль
+                    </Translate>
+                </span>
             </MenuItem>
             <MenuItem sx={{margin: '15px  0 30px'}} disableRipple disableGutters onClick={()=>handleNavigate({path:'/profile',param:'2'})}>
-                <span className={styles.dropdown_item}>История заказов</span>
+                <span className={styles.dropdown_item}>
+                    <Translate>
+                        История заказов
+                    </Translate>
+                </span>
             </MenuItem>
             <MenuItem disableRipple disableGutters onClick={handleClose}>
-                <ButtonReq width='164px'>Выйти</ButtonReq>
+                <ButtonReq width='164px'>
+                    Выйти
+                </ButtonReq>
             </MenuItem>
         </DropDown>
         </>

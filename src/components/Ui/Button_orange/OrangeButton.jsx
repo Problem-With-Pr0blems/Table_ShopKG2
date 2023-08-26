@@ -1,10 +1,13 @@
 import React from 'react'
 import styles from "./OrangeButton.module.css"
+import { Translate } from '../../Translate/Translate'
 
 function OrangeButton({variant,...props}) {
   return (
     <button className={styles.button} {...props} >
-        {variant}
+        <Translate>
+          {variant}
+        </Translate>
     </button>
   )
 }

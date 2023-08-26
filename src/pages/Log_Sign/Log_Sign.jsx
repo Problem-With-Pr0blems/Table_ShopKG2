@@ -4,6 +4,7 @@ import Signin from '../../components/Signin/Signin'
 import styles from './Log_Sign.module.css'
 import { useState } from 'react'
 import { useLocation } from 'react-router-dom'
+import { Translate } from '../../components/Translate/Translate'
 
 function Log_Sign() {
   const [chooosen , setChoosen] = useState(true)
@@ -31,10 +32,18 @@ function Log_Sign() {
         <div className={styles.switch_place}> 
           <span className={styles.switch}
           style={{color:activeColor(chooosen)}}
-          onClick={()=>{toggleColor(1)}}>Войти</span>
+          onClick={()=>{toggleColor(1)}}>
+            <Translate>
+              Войти
+            </Translate>
+          </span>
           <span className={styles.switch}
           style={{color:activeColor(!chooosen)}}
-          onClick={()=>{toggleColor(2)}}>Регистрация</span>
+          onClick={()=>{toggleColor(2)}}>
+            <Translate>
+              Регистрация
+            </Translate>
+            </span>
         </div>
         {
           chooosen ? <div><Login/></div> : <div><Signin/></div> 
