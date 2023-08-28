@@ -3,23 +3,19 @@ import Tab from '@mui/material/Tab';
 import Tabs from '../../components/Ui/Tabs/Tabs';
 import { Box } from '@mui/material';
 
+const tabListContent = ["Главная" ,"Личные данные","История заказов" ]
+
 const Profile = () => {
   return (
     <Box sx={{
       maxWidth: '1000px',
       margin: '80px auto'
     }}>
-        <Tabs tabList={
-          [ 
-          <Tab disableRipple label="Главная" value={'1'} />,
-          <Tab disableRipple label="Личные данные" value={'2'} />,
-          <Tab disableRipple label="История заказов" value={'3'} />
-          ]
-          }
+        <Tabs tabList={tabListContent.map((item,i)=><Tab key={item} disableRipple label={item} value={i.toString()} />)}
       >
-        <TabPanel value={'1'}>Item One</TabPanel>
-        <TabPanel value={'2'}>Item Two</TabPanel>
-        <TabPanel value={'3'}>Item Three</TabPanel>
+        <TabPanel value={'0'}>Item One</TabPanel>
+        <TabPanel value={'1'}>Item Two</TabPanel>
+        <TabPanel value={'2'}>Item Three</TabPanel>
       </Tabs>
     </Box>
   )

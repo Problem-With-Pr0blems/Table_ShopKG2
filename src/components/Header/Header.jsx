@@ -138,15 +138,18 @@ export const  HeaderLeft = () => {
 }
 
 const Profile = () => {
-    const [anchorEl, setAnchorEl] = React.useState(null);
+    const [anchorEl, setAnchorEl] = useState(null);
     const navigate = useNavigate()
-    const open = Boolean(anchorEl);
+    const [open,setOpen] = useState(false)
+    
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
+        setOpen(prev=>!prev)
     };
 
     const handleClose = () => {
         setAnchorEl(null);
+        setOpen(false)
     };
     const handleNavigate = ({path,param}) => {
         handleClose()
@@ -164,7 +167,7 @@ const Profile = () => {
             <MenuItem sx={{justifyContent: 'center',marginTop: '8px'}} disableRipple disableGutters onClick={()=>handleNavigate({path: '/auth',param: 'sign'})}>
                 <span className={styles.dropdown_item_sign}>Зарегистрироваться</span>
             </MenuItem> */}
-            <MenuItem disableRipple disableGutters onClick={()=>handleNavigate({path:'/profile',param:'1'})}>
+            <MenuItem disableRipple disableGutters onClick={()=>handleNavigate({path:'/profile',param:'0'})}>
                 <span className={styles.dropdown_item}>
                     <Translate>
                         Профиль

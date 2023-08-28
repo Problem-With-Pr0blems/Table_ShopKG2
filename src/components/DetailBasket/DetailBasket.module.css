@@ -1,0 +1,50 @@
+.root {}
+
+.basket {
+  display: flex;
+  flex-direction: column;
+  width: 276px;
+  padding: 19px 19px 22px;
+  border-radius: 10px;
+  border: 1px solid #DFDFDF;
+  background: #FFF;
+}
+
+.paragraph {
+  color: #BCBCBC;
+  font-family: Roboto;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 6px;
+}
+
+.counter {
+  margin: 39px 0 36px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.counter_buttons {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.counter_count {
+  color: #000;
+  text-align: right;
+  font-family: Roboto;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+@media (max-width: 310px) {
+  .basket {
+    padding: 16px;
+    width: 100%;
+  }
+}

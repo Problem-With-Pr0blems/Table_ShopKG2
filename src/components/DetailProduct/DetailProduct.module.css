@@ -1,0 +1,33 @@
+.main {
+  padding: 42px 60px 26px;
+  display: flex;
+  gap: 60px
+}
+
+.left {
+  display: flex;
+  gap: 60px;
+}
+
+@media (max-width: 1050px) {
+  .left {
+    flex-direction: column;
+  }
+
+  .main {
+    gap: 30px;
+  }
+}
+
+@media (max-width: 720px) {
+  .main {
+    flex-direction: column;
+    padding: 50px 20px 20px;
+  }
+}
+
+@media (max-width: 360px) {
+  .main {
+    padding: 50px 16px 16px;
+  }
+}

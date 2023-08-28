@@ -39,7 +39,11 @@ function Signin() {
                 <Button_img img={google}/>
                 <Button_img img={facebook}/>
             </div>
-            <p className={styles.or}>or using e-mail for log in</p>
+            <p className={styles.or}>
+                <Translate>
+                    or using e-mail for log in
+                </Translate>
+            </p>
             <div className={styles.signin_inputs}>
                 <Input  register={{...register("name", {required: true, minLength: 1, pattern: /\w+/,  })}} type='text' variant='simple' placeholder='Имя *'/>
                 <Error type={errors.name?.type}>
@@ -64,7 +68,11 @@ function Signin() {
                     Min length of password 8 character
                 </Error>
             </div>
-            <p className={styles.warning}>Поля, помеченные звездочками, обязательны для заполнения.</p>
+            <p className={styles.warning}>
+                <Translate>
+                    Поля, помеченные звездочками, обязательны для заполнения.
+                </Translate>
+            </p>
             <div className={styles.radio}>
                 <Radio register={register('radio',{required: true})} text='Соглашаюсь с правиласми пользования торговой площадкой и возврата'/>
             </div>

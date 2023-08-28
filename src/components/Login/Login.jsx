@@ -16,8 +16,7 @@ export function GoogleLogin() {
                 client_id:
                     '447596947513-4lklfsjlcq6fe8el9nn8vlifo77gh948.apps.googleusercontent.com',
                 scope: 'https://www.googleapis.com/auth/calendar.readonly',
-                ux_mode: 'redirect',
-                redirect_uri: '/',
+                ux_mode: 'pop_up',
                 callback: response => {
                     console.log(response)
                 }
@@ -31,7 +30,6 @@ function Login() {
         <div className={styles.signin_from}>
                 <Button_img img={vk}/>
                 <Button_img onClick={GoogleLogin} img={googleSVG}/>
-                
                 <Button_img img={facebook}/>
         </div>
         <p className={styles.or}>

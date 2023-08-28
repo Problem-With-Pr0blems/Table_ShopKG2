@@ -13,11 +13,14 @@ const DetailProduct = lazy(()=> import('./components/DetailProduct/DetailProduct
 
 function App() {
   const [open, setOpen] = useState(false);
+  const [openDetail,setOpenDetail] = useState(false)
   const handleOpen = async() => {
-    setOpen(true)
+    // setOpen(true)
+    setOpenDetail(true)
   };
   const handleClose = () => setOpen(false);
-  return (
+
+  return ( 
     <div className="App">
       <Routes>
         <Route loader={<Loader/>}  element={<Layout/>} >
@@ -35,7 +38,7 @@ function App() {
       <Translate >
         Hello
       </Translate>
-      {/* <DetailProduct open={true}/> */}
+      <DetailProduct open={openDetail} onClose={()=> setOpenDetail(false)} />
       <RequestModal open={open} onClose={handleClose}/>
     </div>
   );
