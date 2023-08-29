@@ -15,22 +15,22 @@ const iconStyle = {
 
 const DetailProduct = ({open,onClose}) => {
   return (
-    <Drawer
-    open={open}
-    onClose={onClose}
-    anchor='bottom'
-  >
-    <Box className={styles.main}>
-       <IconButton sx={iconStyle} onClick={onClose}>
-            <img src={closeIcon} alt="" />
-          </IconButton>
-     <Box className={styles.left}>
-      <ImageSlide/>
-      <DetailInfo/>
-     </Box>
-      <DetailBasket/>
-    </Box>
-</Drawer>
+      <Drawer
+        open={open}
+        onClose={onClose}
+        anchor='bottom'
+        >
+        <Box className={styles.main}>
+          <IconButton sx={iconStyle} onClick={onClose}>
+                <img src={closeIcon} alt="" />
+              </IconButton>
+        <Box className={styles.left}>
+          <ImageSlide/>
+          <DetailInfo/>
+        </Box>
+          <DetailBasket/>
+        </Box>
+    </Drawer>
   )
 }
 

@@ -87,7 +87,7 @@ export const SelectLang = () => {
     )
 }
 
-export const ButtonRequest = () =>{
+const ButtonRequest = () =>{
     const [open, setOpen] = useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
@@ -152,7 +152,6 @@ const Profile = () => {
         setOpen(false)
     };
     const handleNavigate = ({path,param}) => {
-        handleClose()
         navigate(path,{state:param})
     }
     return (

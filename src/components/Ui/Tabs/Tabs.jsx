@@ -28,17 +28,7 @@ const tabStyle = { width: '100%', typography: 'body1','.MuiTabPanel-root': {
   paddingLeft: 0
 }}
 
-const Tabs = ({tabList,children}) => {
-  const [value, setValue] = useState('1');
-  const location = useLocation()
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
-
-  useEffect(()=>{
-    setValue(location.state ?? '1')
-  },[location])
-
+const Tabs = ({tabList,children,value, handleChange}) => {
   return (
     <Box sx={tabStyle}>
       <TabContext value={value}>

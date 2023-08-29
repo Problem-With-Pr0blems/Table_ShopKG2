@@ -11,6 +11,7 @@ const DropDown = ({children,open, anchorEl,handleClose}) => {
             vertical:  45
         }}
         onClose={handleClose}
+        onClick={handleClose}
         MenuListProps={{
           'aria-labelledby': 'basic-button',
         }}
