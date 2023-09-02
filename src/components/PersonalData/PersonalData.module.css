@@ -1,0 +1,104 @@
+.main_root_personal_data {
+  display: flex;
+  gap: 19px;
+}
+
+
+
+.root_personal_data {
+  border-radius: 5px;
+  border: 1px solid #DFDFDF;
+  background: #FFF;
+  padding: 19px 20px 33px 35px;
+  max-width: 477px;
+  width: 100%;
+}
+
+.root_personal_data_title {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+}
+
+.root_personal_data_title {
+  color: #000;
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.root_personal_data_form {
+  margin-top: 31px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.root_personal_data_helper {
+  margin-top: 7px;
+  color: #000;
+  font-family: Roboto;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.root_personal_data button {
+  align-self: flex-end;
+  margin-top: 48px;
+}
+
+.root_password {
+  max-width: 477px;
+  width: 100%;
+  height: fit-content;
+  padding: 23px 35px 30px 31px;
+  border-radius: 5px;
+  border: 1px solid #DFDFDF;
+  background: #FFF;
+}
+
+.root_password_title {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.root_password_form {
+  margin-top: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.root_password_input {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.root_password_input span {
+  color: #000;
+  font-family: Roboto;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.root_password_form button {
+  align-self: flex-end;
+}
+
+@media (max-width: 700px) {
+  .main_root_personal_data {
+    flex-wrap: wrap;
+  }
+
+  .root_password_input {
+    flex-wrap: wrap;
+  }
+}

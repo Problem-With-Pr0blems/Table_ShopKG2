@@ -1,10 +1,6 @@
 import Box from '@mui/material/Box';
-import Tab from '@mui/material/Tab';
 import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
-import TabPanel from '@mui/lab/TabPanel';
-import { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
 
 
 const tabListStyle = { 
@@ -21,6 +17,9 @@ const tabListStyle = {
     padding: '0 30px 0 0',
     marginRight: '30px',
     alignItems: 'flex-start'
+  },
+  '.MuiTabs-scroller': {
+    overflow: 'auto'
   }
 }
 
@@ -31,7 +30,7 @@ const tabStyle = { width: '100%', typography: 'body1','.MuiTabPanel-root': {
 const Tabs = ({tabList,children,value, handleChange}) => {
   return (
     <Box sx={tabStyle}>
-      <TabContext value={value}>
+      <TabContext  value={value}>
         <Box sx={tabListStyle}
        >
           <TabList onChange={handleChange} aria-label="lab API tabs example">

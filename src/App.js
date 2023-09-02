@@ -1,7 +1,6 @@
 
 import './App.css';
 import { Routes,Route } from 'react-router-dom'
-import Loader from './components/Ui/Loader/Loader';
 import { lazy, useState } from 'react';
 import { Translate } from './components/Translate/Translate';
 const LogSign = lazy(()=>import('./pages/Log_Sign/Log_Sign'))

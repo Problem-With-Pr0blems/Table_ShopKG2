@@ -1,0 +1,23 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  width: 100%;
+}
+
+.root input {
+  height: 40px;
+  padding: 11px 12px;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.40);
+  background: #FFF;
+}
+
+.root span {
+  color: #BDBDBD;
+  font-family: Roboto;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
